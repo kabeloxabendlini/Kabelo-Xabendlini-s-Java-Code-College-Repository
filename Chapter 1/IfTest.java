@@ -1,11 +1,16 @@
 class IfTest {
- public static void main (String[] args) {
- int x = 3;
+    public static void main(String[] args) {
 
- if (x == 3) {
- System.out.println("x must be 3");
- }
+        // Declare and initialize variable x with value 3
+        int x = 3;
 
- System.out.println("This runs no matter what");
- }
+        // Check if x is equal to 3
+        if (x == 3) {
+            // This line only prints if the condition above is true
+            System.out.println("x must be 3");
+        }
+
+        // This line always executes, regardless of the if condition
+        System.out.println("This runs no matter what");
+    }
 }

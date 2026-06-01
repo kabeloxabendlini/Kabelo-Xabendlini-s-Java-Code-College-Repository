@@ -1,9 +1,13 @@
 public class MyFirstApp {
 
-    public static void main (String[] args) {
+    // Entry point of the program — execution starts here
+    public static void main(String[] args) {
 
-System.out.println("I Rule!");
-System.out.println("The World");
+        // Print "I Rule!" to the console
+        System.out.println("I Rule!");
+
+        // Print "The World" to the console
+        System.out.println("The World");
 
     }
 
