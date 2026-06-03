@@ -1,0 +1,16 @@
+| #  | Statement                               | Answer                |
+| -- | --------------------------------------- | --------------------- |
+| 1  | I am compiled from a .java file.        | **Class**             |
+| 2  | My instance variable values can...      | **Object**            |
+| 3  | ...be different from my buddy's values. | **Object**            |
+| 4  | I behave like a template.               | **Class**             |
+| 5  | I like to do stuff.                     | **Method**            |
+| 6  | I can have many methods.                | **Class**             |
+| 7  | I represent "state."                    | **Instance Variable** |
+| 8  | I have behaviors.                       | **Object**            |
+| 9  | I am located in objects.                | **Instance Variable** |
+| 10 | I live on the heap.                     | **Object**            |
+| 11 | I am used to create object instances.   | **Class**             |
+| 12 | My state can change.                    | **Object**            |
+| 13 | I declare methods.                      | **Class**             |
+| 14 | I can change at runtime.                | **Instance Variable** |
