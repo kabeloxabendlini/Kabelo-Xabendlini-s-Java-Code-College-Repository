@@ -1,0 +1,11 @@
+| Statement                               | Valid? | Explanation                                             |
+| --------------------------------------- | ------ | ------------------------------------------------------- |
+| `int a = calcArea(7, 12);`              | ✅ Yes  | Two `int` arguments supplied, returns an `int`.         |
+| `short c = 7; calcArea(c, 15);`         | ✅ Yes  | `short` is automatically promoted to `int`.             |
+| `int d = calcArea(57);`                 | ❌ No   | Missing the second argument.                            |
+| `calcArea(2, 3);`                       | ✅ Yes  | Return value can be ignored.                            |
+| `long t = 42; int f = calcArea(t, 17);` | ❌ No   | `long` cannot be automatically narrowed to `int`.       |
+| `int g = calcArea();`                   | ❌ No   | No arguments supplied.                                  |
+| `calcArea();`                           | ❌ No   | No arguments supplied.                                  |
+| `byte h = calcArea(4, 20);`             | ❌ No   | Method returns `int`; cannot assign directly to `byte`. |
+| `int j = calcArea(2, 3, 5);`            | ❌ No   | Too many arguments.                                     |
