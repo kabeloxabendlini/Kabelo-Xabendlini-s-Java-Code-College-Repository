@@ -1,0 +1,22 @@
+
+
+// Tom noticed that the V2Radiator constructor accepts an ArrayList as a parameter.
+// This means that whenever a V3Radiator object is created, its constructor calls
+// super(), passing an ArrayList to the V2Radiator constructor.
+
+// As a result, the V2Radiator constructor creates five additional V2Radiator
+// SimUnit objects each time a V3Radiator is instantiated.
+
+// If Tom's analysis is correct, these extra SimUnits would increase the total
+// power consumption from the expected 100 units to 120 units.
+
+// Sarah's predicted power ratios assumed that no extra SimUnits were being
+// created, so her calculations would not match the actual results.
+
+// Since every Bot-related class creates SimUnit objects, a simple debugging
+// technique would be to add a constructor to the SimUnit class that prints
+// a message whenever a new SimUnit is created.
+
+// This would make it easy to track object creation during program execution
+// and quickly reveal the unexpected creation of the five extra V2Radiator
+// SimUnits, helping to identify the source of the power discrepancy.

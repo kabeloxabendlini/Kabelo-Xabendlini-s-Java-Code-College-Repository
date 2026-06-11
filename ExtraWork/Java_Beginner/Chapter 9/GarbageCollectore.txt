@@ -1,0 +1,11 @@
+| Step | Statement        | Garbage Collection Eligible? | Explanation                                                     |
+| ---- | ---------------- | ---------------------------- | --------------------------------------------------------------- |
+| 1    | `copyGC = null;` | **No**                       | This line attempts to access a variable that is out of scope.   |
+| 2    | `gc2 = null;`    | **OK**                       | `gc2` was the only reference variable referring to that object. |
+| 3    | `newGC = gc3;`   | **No**                       | Another out-of-scope variable.                                  |
+| 4    | `gc1 = null;`    | **OK**                       | `gc1` had the only reference because `newGC` is out of scope.   |
+| 5    | `newGC = null;`  | **No**                       | `newGC` is out of scope.                                        |
+| 6    | `gc4 = null;`    | **No**                       | `gc3` is still referring to that object.                        |
+| 7    | `gc3 = gc2;`     | **No**                       | `gc4` is still referring to that object.                        |
+| 8    | `gc1 = gc4;`     | **OK**                       | Reassigning the only reference to that object.                  |
+| 9    | `gc3 = null;`    | **No**                       | `gc4` is still referring to that object.                        |
