@@ -4,25 +4,23 @@
  */
 package chapter_08;
 
-import chapter_04.*;
-
 /**
  *
  * @author Admin
  */
+// Animal.java
 
-/*
- * Dog class
- * Represents a dog with a name and size.
- * The dog's bark changes depending on its size.
- */
-public class Dog extends Animal {
+public class Animal {
+
+    public void eat() {
+        System.out.println("munch munch");
+    }
 
     public void roam() {
-        System.out.println("Dog roams the neighbourhood");
+        System.out.println("roam roam");
     }
 
     public void makeNoise() {
-        System.out.println("Woof!");
+        System.out.println("...");
     }
 }
