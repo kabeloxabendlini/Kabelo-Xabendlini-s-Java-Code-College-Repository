@@ -1,0 +1,19 @@
+// 1, 4, 5, and 6 are legal.
+//
+// These code examples compile successfully because they follow
+// Java's rules regarding static variables, instance variables,
+// final variables, and method access.
+
+// 2 doesn't compile because the static method references
+// a non-static instance variable.
+//
+// A static method belongs to the class rather than an object,
+// so it cannot directly access instance variables. An object
+// must first be created before its instance variables can be used.
+
+// 3 doesn't compile because the instance variable is final
+// but hasn't been initialized.
+//
+// A final instance variable must be assigned a value exactly once,
+// either when it is declared or within every constructor. Since
+// this variable was never initialized, the compiler reports an error.

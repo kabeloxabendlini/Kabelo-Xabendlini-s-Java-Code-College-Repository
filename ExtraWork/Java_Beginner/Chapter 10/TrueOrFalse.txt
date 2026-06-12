@@ -1,0 +1,30 @@
+| #  | Statement                                                                           | True / False |
+| -- | ----------------------------------------------------------------------------------- | ------------ |
+|    |                                                                                     |              |
+| 1  | To use the `Math` class, the first step is to make an instance of it.               | **False**    |
+|    |                                                                                     |              |
+| 2  | You can mark a constructor with the keyword `static`.                               | **False**    |
+|    |                                                                                     |              | 
+| 3  | Static methods don’t have access to an object’s instance variables.                 | **True**     |
+|    |                                                                                     |              |
+| 4  | It is good practice to call a static method using a reference variable.             | **False**    |
+|    |                                                                                     |              |
+| 5  | Static variables could be used to count the instances of a class.                   | **True**     |
+|    |                                                                                     |              |
+| 6  | Constructors are called before static variables are initialized.                    | **False**    |
+|    |                                                                                     |              |
+| 7  | `MAX_SIZE` would be a good name for a static final variable.                        | **True**     |
+|    |                                                                                     |              |
+| 8  | A static initializer block runs before a class’s constructor runs.                  | **True**     |
+|    |                                                                                     |              |
+| 9  | If a class is marked `final`, all of its methods must be marked `final`.            | **False**    |
+|    |                                                                                     |              |
+| 10 | A `final` method can be overridden only if its class is extended.                   | **False**    |
+|    |                                                                                     |              |
+| 11 | There is no wrapper class for `boolean` primitives.                                 | **False**    |
+|    |                                                                                     |              |
+| 12 | A wrapper is used when you want to treat a primitive like an object.                | **True**     |
+|    |                                                                                     |              |
+| 13 | The `parseXxx()` methods always return a `String`.                                  | **False**    |
+|    |                                                                                     |              |
+| 14 | Formatting classes (which are decoupled from I/O) are in the `java.format` package. | **False**    |
