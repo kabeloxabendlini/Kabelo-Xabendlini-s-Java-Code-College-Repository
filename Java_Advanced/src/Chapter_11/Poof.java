@@ -2,17 +2,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package chapter_07;
-
-import chapter_07.ExtraWork.Boat;
+package Chapter_11;
 
 /**
  *
  * @author Admin
  */
-public class Sailboat extends Boat {
+class Poof {
 
-    public void move() {
-        System.out.print("hoist sail ");
+    final void calcWhuffie() {
+        System.out.println("Calculating Whuffie...");
+        // important things
+        // that must never be overridden
     }
 }

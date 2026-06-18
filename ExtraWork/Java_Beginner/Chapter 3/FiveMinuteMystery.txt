@@ -1,0 +1,13 @@
+//The case of the pilfered references
+//Tawny could see that Kate’s method had a serious flaw.
+//It’s true that she didn’t use as many reference variables
+//as Bob, but there was no way to access any but the last
+//of the Contact objects that her method created. With each
+//trip through the loop, she was assigning a new object
+//to the one reference variable, so the previously referenced object was abandoned on the heap—unreachable.
+//Without access to nine of the ten objects created, Kate’s
+//method was useless.
+
+(The software was a huge success, and the client gave Tawny and Bob an extra
+week in Hawaii. We’d like to tell you that by finishing this book you too will get stuff
+like that.)

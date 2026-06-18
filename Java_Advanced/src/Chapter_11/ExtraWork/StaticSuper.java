@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package chapter_10.ExtraWork;
+package Chapter_11.ExtraWork;
 
 /**
  *
@@ -10,15 +10,10 @@ package chapter_10.ExtraWork;
  */
 class StaticSuper {
 
-    // Static initialization block.
-    // Runs once when the class is loaded into memory,
-    // before any objects are created.
     static {
         System.out.println("super static block");
     }
 
-    // Constructor.
-    // Runs every time a new StaticSuper object is created.
     StaticSuper() {
         System.out.println("super constructor");
     }

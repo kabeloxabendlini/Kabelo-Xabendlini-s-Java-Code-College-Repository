@@ -1,0 +1,11 @@
+| Reference Variable | Points To Object     |
+| ------------------ | -------------------- |
+| `hq[0]`            | `null`               |
+|                    |                      |
+| `hq[1]`            | Object with `id = 1` |
+|                    |                      |
+| `hq[2]`            | Object with `id = 0` |
+|                    |                      |
+| `hq[3]`            | Object with `id = 2` |
+|                    |                      |
+| `hq[4]`            | `null`               |

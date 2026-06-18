@@ -1,0 +1,59 @@
+╔══════════════════════════════════════════════════════════════════════╗
+║                                                                          ║
+║                    ✎  S O L U T I O N  ✎                               ║
+║                    "Sharpen your pencil"                                ║
+║                                                                          ║
+║                      TreeSet Exercise                                   ║
+║                      (from page 353)                                    ║
+║                                                                          ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+
+┌──────────────────────────────────────────────────────────────────────┐
+│ Q1.  What is the result when you compile this code?                    │
+└──────────────────────────────────────────────────────────────────────┘
+
+    ┌────────────────────────┐
+    │  It compiles correctly │
+    └────────────────────────┘
+
+
+┌──────────────────────────────────────────────────────────────────────┐
+│ Q2.  If it compiles, what is the result when you run the               │
+│      TestTree class?                                                   │
+└──────────────────────────────────────────────────────────────────────┘
+
+    ┌─────────────────────────┐
+    │  It throws an exception: │
+    └─────────────────────────┘
+
+    ┌──────────────────────────────────────────────────────────────────┐
+    │ Exception in thread "main" java.lang.ClassCastException: class    │
+    │ Book cannot be cast to class java.lang.Comparable                 │
+    │                                                                    │
+    │     at java.base/java.util.TreeMap.compare(TreeMap.java:1291)     │
+    │     at java.base/java.util.TreeMap.put(TreeMap.java:536)          │
+    │     at java.base/java.util.TreeSet.add(TreeSet.java:255)          │
+    │     at TestTree.go(TestTree.java:16)                              │
+    │     at TestTree.main(TestTree.java:7)                             │
+    └──────────────────────────────────────────────────────────────────┘
+
+
+┌──────────────────────────────────────────────────────────────────────┐
+│ Q3.  If there is a problem (either compile-time or runtime) with       │
+│      this code, how would you fix it?                                  │
+└──────────────────────────────────────────────────────────────────────┘
+
+    ┌────────────────────────────────────────────────────────┐
+    │  Make Book implement Comparable, or pass the TreeSet     │
+    │  a Comparator                                             │
+    └────────────────────────────────────────────────────────┘
+
+                                                      ╲
+                                                       ╲___
+                                                           "See page 374"
+
+
+══════════════════════════════════════════════════════════════════════════
+                          end of solution sheet
+══════════════════════════════════════════════════════════════════════════

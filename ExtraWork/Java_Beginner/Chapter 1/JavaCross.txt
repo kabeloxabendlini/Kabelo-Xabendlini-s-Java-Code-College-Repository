@@ -1,41 +1,23 @@
-1. FLOAT
+| #  | Answer  |            
+| -- | ------- |
+| 1  | JAVA    |
+| 3  | BRANCH  |
+| 4  | SYSTEM  |
+| 6  | OUT     |
+| 7  | PRINT   |
+| 8  | STRING  |
+| 9  | DECLARE |
+| 10 | COMMAND |
+| 12 | LOOP    |
 
-2. VOID
-
-3. PUBLIC
-
-4. JAVA
-
-5. ARRAYS
-
-6. LOOP
-
-7. WHILE
-
-8. BRANCH
-
-9. DC
-
-10. COMPILER
-
-11. VARIABLE
-
-12. INT
-
-13. ICT
-
-14. SYSTEM OUTPRINT
-
-15. STATIC
-
-16. MAIN
-
-17. METHOD
-
-18. STRING
-
-19. DECLARE
-
-20. JVM
-
-21. COMMAND
+| #  | Answer   |
+| -- | -------- |
+| 1  | ARRAY    |
+| 2  | FLOAT    |
+| 5  | STATIC   |
+| 11 | INT      |
+| 13 | PUBLIC   |
+| 14 | VARIABLE |
+| 15 | CLASS    |
+| 16 | COMPILER |
+| 17 | METHOD   |

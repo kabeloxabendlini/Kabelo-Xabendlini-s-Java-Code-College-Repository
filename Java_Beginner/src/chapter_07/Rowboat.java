@@ -4,6 +4,8 @@
  */
 package chapter_07;
 
+import chapter_07.ExtraWork.Boat;
+
 /**
  *
  * @author Admin

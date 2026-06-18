@@ -1,0 +1,14 @@
+| #  | Statement          | Compiles? | Explanation                                                                   |
+| -- | ------------------ | --------- | ----------------------------------------------------------------------------- |
+| 1  | `int x = 34.5;`    | ❌ No      | Cannot assign a `double` value (`34.5`) to an `int` without an explicit cast. |
+| 2  | `boolean boo = x;` | ❌ No      | A `boolean` can only hold `true` or `false`, not an `int`.                    |
+| 3  | `int g = 17;`      | ✅ Yes     | An `int` literal can be assigned to an `int` variable.                        |
+| 4  | `int y = g;`       | ✅ Yes     | An `int` variable can be assigned to another `int` variable.                  |
+| 5  | `y = y + 10;`      | ✅ Yes     | The expression evaluates to an `int`, which can be assigned back to `y`.      |
+| 6  | `short s;`         | ✅ Yes     | Declares a `short` variable.                                                  |
+| 7  | `s = y;`           | ❌ No      | Cannot assign an `int` to a `short` without a cast.                           |
+| 8  | `byte b = 3;`      | ✅ Yes     | The literal `3` fits within the range of a `byte`.                            |
+| 9  | `byte v = b;`      | ✅ Yes     | A `byte` can be assigned to another `byte`.                                   |
+| 10 | `short n = 12;`    | ✅ Yes     | The literal `12` fits within the range of a `short`.                          |
+| 11 | `v = n;`           | ❌ No      | Cannot assign a `short` to a `byte` without a cast.                           |
+| 12 | `byte k = 128;`    | ❌ No      | A `byte` can only hold values from `-128` to `127`; `128` is out of range.    |

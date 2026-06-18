@@ -2,17 +2,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package chapter_07;
-
-import chapter_07.ExtraWork.Boat;
+package Chapter_11;
 
 /**
  *
  * @author Admin
  */
-public class Sailboat extends Boat {
+class Player {
 
-    public void move() {
-        System.out.print("hoist sail ");
+    static int playerCount = 0;
+    private String name;
+
+    public Player(String n) {
+        name = n;
+        playerCount++;
     }
 }

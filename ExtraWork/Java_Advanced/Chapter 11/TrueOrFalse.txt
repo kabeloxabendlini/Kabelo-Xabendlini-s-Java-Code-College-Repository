@@ -1,0 +1,45 @@
+╔══════════════════════════════════════════════════════════════════════╗
+║                                                                          ║
+║                    ✎  S O L U T I O N  ✎                               ║
+║                                                                          ║
+║              Generics & Method Call Compatibility                      ║
+║                                                                          ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+
+┌──────────────────────────────────────────────────────────────────────┐
+│  [✓] = compiles successfully        [☐] = does NOT compile             │
+└──────────────────────────────────────────────────────────────────────┘
+
+
+    [✓]  takeAnimals(new ArrayList<Animal>());
+
+    [☐]  takeDogs(new ArrayList<Animal>());
+
+    [☐]  takeAnimals(new ArrayList<Dog>());
+
+    [✓]  takeDogs(new ArrayList<>());
+
+    [✓]  List<Dog> dogs = new ArrayList<>();
+         takeDogs(dogs);
+
+    [✓]  takeSomeAnimals(new ArrayList<Dog>());
+
+    [✓]  takeSomeAnimals(new ArrayList<>());
+
+    [✓]  takeSomeAnimals(new ArrayList<Animal>());
+
+    [✓]  List<Animal> animals = new ArrayList<>();
+         takeSomeAnimals(animals);
+
+    [☐]  List<Object> objects = new ArrayList<>();
+         takeObjects(objects);
+
+    [☐]  takeObjects(new ArrayList<Dog>());
+
+    [✓]  takeObjects(new ArrayList<Object>());
+
+
+══════════════════════════════════════════════════════════════════════════
+                          end of solution sheet
+══════════════════════════════════════════════════════════════════════════

@@ -1,0 +1,8 @@
+//Jai knew that Buchanan wasn’t the sharpest
+//pencil in the box. When Jai heard Buchanan
+//talk about his code, Buchanan never mentioned
+//his instance variables. Jai suspected that while
+//Buchanan did in fact handle his methods
+//correctly, he failed to mark his instance variables
+//private. That slip-up could have easily cost
+//Leveler thousands.
