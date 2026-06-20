@@ -1,0 +1,91 @@
+╔══════════════════════════════════════════════════════════════════════╗
+║                                                                          ║
+║                Exception Hierarchy — Branching Tree                     ║
+║                                                                          ║
+║                         DeltaEx                                         ║
+║                       /         \                                       ║
+║                  BetaEx        GammaEx                                  ║
+║                       \         /                                       ║
+║                        AlphaEx                                          ║
+║                                                                          ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+
+┌──────────────────────────────────────────────────────────────────────┐
+│ FILE: DeltaEx.java                                                      │
+└──────────────────────────────────────────────────────────────────────┘
+
+    package hierarchy_branching;
+
+    public class DeltaEx extends Exception {
+
+        public DeltaEx() {
+        }
+
+        public DeltaEx(String message) {
+            super(message);
+        }
+    }
+
+
+┌──────────────────────────────────────────────────────────────────────┐
+│ FILE: BetaEx.java                                                       │
+└──────────────────────────────────────────────────────────────────────┘
+
+    package hierarchy_branching;
+
+    public class BetaEx extends DeltaEx {
+
+        public BetaEx() {
+        }
+
+        public BetaEx(String message) {
+            super(message);
+        }
+    }
+
+
+┌──────────────────────────────────────────────────────────────────────┐
+│ FILE: GammaEx.java                                                      │
+└──────────────────────────────────────────────────────────────────────┘
+
+    package hierarchy_branching;
+
+    public class GammaEx extends DeltaEx {
+
+        public GammaEx() {
+        }
+
+        public GammaEx(String message) {
+            super(message);
+        }
+    }
+
+
+┌──────────────────────────────────────────────────────────────────────┐
+│ FILE: AlphaEx.java                                                      │
+└──────────────────────────────────────────────────────────────────────┘
+
+    NOTE: The original diagram shows AlphaEx pointing toward BOTH
+    BetaEx and GammaEx. Java does not support extending two classes
+    at once (single inheritance only), so this version has AlphaEx
+    extend BetaEx. If your exercise intends AlphaEx to inherit from
+    GammaEx instead, just swap "extends BetaEx" for "extends GammaEx"
+    below.
+
+    package hierarchy_branching;
+
+    public class AlphaEx extends BetaEx {
+
+        public AlphaEx() {
+        }
+
+        public AlphaEx(String message) {
+            super(message);
+        }
+    }
+
+
+══════════════════════════════════════════════════════════════════════════
+                          end of solution sheet
+══════════════════════════════════════════════════════════════════════════

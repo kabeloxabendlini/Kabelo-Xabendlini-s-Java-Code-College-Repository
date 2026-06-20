@@ -8,6 +8,13 @@ package Chapter_13;
  *
  * @author Admin
  */
-public class NewClass {
-    
+
+public class ClothingException extends Exception {
+
+    public ClothingException() {
+    }
+
+    public ClothingException(String message) {
+        super(message);
+    }
 }

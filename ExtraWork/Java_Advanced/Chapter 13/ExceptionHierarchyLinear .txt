@@ -1,0 +1,79 @@
+╔══════════════════════════════════════════════════════════════════════╗
+║                                                                          ║
+║                   Exception Hierarchy — Linear Chain                    ║
+║                   AlphaEx -> BetaEx -> GammaEx -> DeltaEx                ║
+║                                                                          ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+
+┌──────────────────────────────────────────────────────────────────────┐
+│ FILE: DeltaEx.java                                                      │
+└──────────────────────────────────────────────────────────────────────┘
+
+    package hierarchy_linear;
+
+    public class DeltaEx extends Exception {
+
+        public DeltaEx() {
+        }
+
+        public DeltaEx(String message) {
+            super(message);
+        }
+    }
+
+
+┌──────────────────────────────────────────────────────────────────────┐
+│ FILE: GammaEx.java                                                      │
+└──────────────────────────────────────────────────────────────────────┘
+
+    package hierarchy_linear;
+
+    public class GammaEx extends DeltaEx {
+
+        public GammaEx() {
+        }
+
+        public GammaEx(String message) {
+            super(message);
+        }
+    }
+
+
+┌──────────────────────────────────────────────────────────────────────┐
+│ FILE: BetaEx.java                                                       │
+└──────────────────────────────────────────────────────────────────────┘
+
+    package hierarchy_linear;
+
+    public class BetaEx extends GammaEx {
+
+        public BetaEx() {
+        }
+
+        public BetaEx(String message) {
+            super(message);
+        }
+    }
+
+
+┌──────────────────────────────────────────────────────────────────────┐
+│ FILE: AlphaEx.java                                                      │
+└──────────────────────────────────────────────────────────────────────┘
+
+    package hierarchy_linear;
+
+    public class AlphaEx extends BetaEx {
+
+        public AlphaEx() {
+        }
+
+        public AlphaEx(String message) {
+            super(message);
+        }
+    }
+
+
+══════════════════════════════════════════════════════════════════════════
+                          end of solution sheet
+══════════════════════════════════════════════════════════════════════════
