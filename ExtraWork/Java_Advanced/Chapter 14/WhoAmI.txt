@@ -1,0 +1,41 @@
+╔══════════════════════════════════════════════════════════════════╗
+║              WHO AM I? — EXERCISE SOLUTIONS (from page 504)        ║
+╚══════════════════════════════════════════════════════════════════╝
+
+┌──────────────────────────────────────────────────────────────────┐
+│ CLUE                                          │ ANSWER            │
+├──────────────────────────────────────────────────────────────────┤
+│ I got the whole GUI, in my hands.             │ JFrame             │
+│ Every event type has one of these.            │ listener interface │
+│ The listener's key method.                    │ actionPerformed()  │
+│ This method gives JFrame its size.            │ setSize()          │
+│ You add code to this method but never call    │ paintComponent()   │
+│   it.                                         │                    │
+│ When the user actually does something, it's   │ event              │
+│   an ___.                                     │                    │
+│ Most of these are event sources.              │ swing components   │
+│ I carry data back to the listener.            │ event object       │
+│ An addXxxListener() method says an object is  │ event source       │
+│   an ___.                                     │                    │
+│ How a listener signs up.                      │ addXxxListener()   │
+│ The method where all the graphics code goes.  │ paintComponent()   │
+│ I'm typically bound to an instance.           │ inner class        │
+│ The "g" in (Graphics g) is really this class. │ Graphics2D         │
+│ The method that gets paintComponent() rolling.│ repaint()          │
+│ The package where most of the Swingers        │ javax.swing        │
+│   reside.                                     │                    │
+└──────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────┐
+│ QUICK NOTES                                                       │
+├──────────────────────────────────────────────────────────────────┤
+│ • paintComponent() and actionPerformed() both appear as answers   │
+│   for different clues — paintComponent() is your drawing code,    │
+│   actionPerformed() is your reaction-to-events code.              │
+│ • "Inner class" ties back to listener classes (e.g.                │
+│   ButtonListener) — they're bound to an instance of the           │
+│   enclosing class, which is why they can reach private fields     │
+│   like `button` without extra wiring.                             │
+│ • event source → event object → listener interface → key method  │
+│   is the whole Swing event chain in one line.                    │
+└──────────────────────────────────────────────────────────────────┘

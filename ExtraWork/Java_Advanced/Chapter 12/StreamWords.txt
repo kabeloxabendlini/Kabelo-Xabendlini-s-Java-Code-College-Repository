@@ -1,0 +1,44 @@
+╔══════════════════════════════════════════════════════════════════╗
+║         WHO DOES WHAT? — STREAM METHODS (from page 374)            ║
+╚══════════════════════════════════════════════════════════════════╝
+
+┌──────────────────────────────────────────────────────────────────┐
+│ TERM        │ DESCRIPTION                                         │
+├──────────────────────────────────────────────────────────────────┤
+│ filter      │ Only allows elements that match the given criteria  │
+│             │ to remain in the Stream.                            │
+│             │                                                     │
+│ skip        │ This is the number of elements at the start of the  │
+│             │ Stream that will not be processed.                  │
+│             │                                                     │
+│ limit       │ Sets the maximum number of elements that can be     │
+│             │ output from this Stream.                            │
+│             │                                                     │
+│ distinct    │ Use this to make sure duplicates are removed.       │
+│             │                                                     │
+│ sorted      │ States the result of the stream should be ordered   │
+│             │ in some way.                                        │
+│             │                                                     │
+│ map         │ Changes the current element in the stream into      │
+│             │ something else.                                     │
+│             │                                                     │
+│ dropWhile   │ While a given criteria is true, will NOT process     │
+│             │ elements. (Starts processing once the criteria      │
+│             │ first becomes false.)                                │
+│             │                                                     │
+│ takeWhile   │ Will ONLY process elements while the given criteria  │
+│             │ is true. (Stops as soon as the criteria first        │
+│             │ becomes false.)                                      │
+└──────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────┐
+│ QUICK NOTE — dropWhile vs takeWhile                                │
+├──────────────────────────────────────────────────────────────────┤
+│ These two are the easiest pair to mix up, since both are about    │
+│ a "criteria" and both stop checking once it flips. The difference: │
+│   • takeWhile KEEPS elements while criteria is TRUE, stops on      │
+│     the first false.                                               │
+│   • dropWhile DISCARDS elements while criteria is TRUE, then       │
+│     keeps everything from the first false onward.                  │
+│ They're mirror images of each other on the same stream.            │
+└──────────────────────────────────────────────────────────────────┘

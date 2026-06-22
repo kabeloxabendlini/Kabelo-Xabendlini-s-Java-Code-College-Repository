@@ -1,0 +1,86 @@
+╔══════════════════════════════════════════════════════════════════╗
+║   SHARPEN YOUR PENCIL — FUNCTIONAL INTERFACES (from page 397)      ║
+╚══════════════════════════════════════════════════════════════════╝
+
+Goal: for each interface, find which method(s) are ABSTRACT (no
+"default" or "static" modifier). An interface only qualifies as a
+FUNCTIONAL interface — usable as a lambda's target type — if it has
+EXACTLY ONE abstract method (a "Single Abstract Method," or SAM).
+
+┌──────────────────────────────────────────────────────────────────┐
+│ BiPredicate<T,U>                                            [SAM] │
+├──────────────────────────────────────────────────────────────────┤
+│ default BiPredicate<T,U>  and(BiPredicate<? super T,? super U>)   │
+│ default BiPredicate<T,U>  negate()                                │
+│ default BiPredicate<T,U>  or(BiPredicate<? super T,? super U>)    │
+│ boolean                   test(T t, U u)            ← ABSTRACT    │
+├──────────────────────────────────────────────────────────────────┤
+│ Has a Single Abstract Method: test(). The other three (and,       │
+│ negate, or) are all "default" methods — they come with a built-in │
+│ implementation, so they don't count toward the SAM requirement.   │
+│ ✅ This IS a valid functional interface.                          │
+└──────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────┐
+│ ActionListener                                               [SAM] │
+├──────────────────────────────────────────────────────────────────┤
+│ void   actionPerformed(ActionEvent e)               ← ABSTRACT    │
+├──────────────────────────────────────────────────────────────────┤
+│ Has a Single Abstract Method: actionPerformed(). Nothing else on  │
+│ the interface to compete with it.                                  │
+│ ✅ This IS a valid functional interface.                          │
+└──────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────┐
+│ Iterator<E>                                          [NOT a SAM]  │
+├──────────────────────────────────────────────────────────────────┤
+│ default void  forEachRemaining(Consumer<? super E> action)       │
+│ boolean        hasNext()                            ← ABSTRACT    │
+│ E              next()                               ← ABSTRACT    │
+│ default void  remove()                                            │
+├──────────────────────────────────────────────────────────────────┤
+│ Has TWO abstract methods: hasNext() AND next(). forEachRemaining  │
+│ and remove() are both "default," so they're disqualified, but two │
+│ abstracts is still one too many.                                   │
+│ ❌ NOT a functional interface — can't be used as a lambda target. │
+└──────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────┐
+│ Function<T,R>                                                [SAM] │
+├──────────────────────────────────────────────────────────────────┤
+│ default <V> Function<T,V>  andThen(Function<? super R,? extends  │
+│                                     V> after)                      │
+│ R                          apply(T t)               ← ABSTRACT    │
+│ default <V> Function<V,R>  compose(Function<? super V,? extends   │
+│                                     T> before)                     │
+│ static <T> Function<T,T>  identity()                              │
+├──────────────────────────────────────────────────────────────────┤
+│ Has a Single Abstract Method: apply(). andThen and compose are    │
+│ "default"; identity() is "static" — neither default nor static    │
+│ methods count toward the SAM requirement either way.               │
+│ ✅ This IS a valid functional interface.                          │
+└──────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────┐
+│ SocketOption<T>                                      [NOT a SAM]  │
+├──────────────────────────────────────────────────────────────────┤
+│ String     name()                                   ← ABSTRACT    │
+│ Class<T>   type()                                   ← ABSTRACT    │
+├──────────────────────────────────────────────────────────────────┤
+│ Has TWO abstract methods: name() AND type(). Neither has a        │
+│ default or static modifier, so both compete for "the one" SAM —   │
+│ and an interface can only have one.                                │
+│ ❌ NOT a functional interface.                                     │
+└──────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────┐
+│ THE RULE OF THUMB                                                  │
+├──────────────────────────────────────────────────────────────────┤
+│ Scan a table top to bottom. Cross off anything marked "default"   │
+│ or "static" first — those never count. Whatever's left:           │
+│   • Exactly 1 method left → functional interface, that one        │
+│     method is what your lambda's parameters/return type must      │
+│     match.                                                          │
+│   • 0 or 2+ methods left → not a functional interface, no lambda  │
+│     allowed.                                                       │
+└──────────────────────────────────────────────────────────────────┘

@@ -2,12 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Chapter_14;
+package chapter_07.ExtraWork;
+
+import chapter_07.ExtraWork.Boat;
 
 /**
  *
  * @author Admin
  */
-public class NewClass {
-    
+
+public class Rowboat extends Boat {
+
+    public void rowTheBoat() {
+        System.out.print("stroke natasha");
+    }
 }

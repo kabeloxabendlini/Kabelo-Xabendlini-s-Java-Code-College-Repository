@@ -1,0 +1,18 @@
+1. Alex didn’t pay attention to the order of the stream operations. She first mapped the
+
+2. coffee objects to a stream of Strings, and then ordered that. Strings are naturally ordered
+
+3. alphabetically, so when the coffee machine got the “first” of these results for Alex’s
+
+4. afternoon coffee, it was brewing a fresh “Americano.”
+
+5. If Alex wanted to order the coffees by strength, with the weakest (1 out of 5) first, she
+
+6. needed to order the stream of coffees first, before mapping it to a String name,
+
+7. afternoonCoffee = coffees.stream()
+ .sorted()
+ .map(Coffee::getName)
+ .findFirst();
+
+8. Then the coffee machine will brew her a decaf instead of an Americano.

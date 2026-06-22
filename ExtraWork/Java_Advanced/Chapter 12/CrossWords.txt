@@ -1,0 +1,59 @@
+╔══════════════════════════════════════════════════════════════════╗
+║           MIXED MESSAGES — LAMBDAS AND STREAMS (from page 372)     ║
+╚══════════════════════════════════════════════════════════════════╝
+
+Setup: assume `nums` is a List<Integer> containing {1, 2, 3, 4, 5}.
+
+┌──────────────────────────────────────────────────────────────────┐
+│ CANDIDATES                                                        │
+├──────────────────────────────────────────────────────────────────┤
+│ 1)  for (int i = 1; i < nums.size(); i++)                         │
+│         output += nums.get(i) + " ";                              │
+│                                                                    │
+│ 2)  for (Integer num : nums)                                       │
+│         output += nums + " ";                                     │
+│                                                                    │
+│ 3)  for (int i = 0; i <= nums.length; i++)                         │
+│         output += nums.get(i) + " ";                               │
+│                                                                    │
+│ 4)  for (int i = 0; i <= nums.size(); i++)                          │
+│         output += nums.get(i) + " ";                               │
+└──────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────┐
+│ POSSIBLE OUTPUT                                                    │
+├──────────────────────────────────────────────────────────────────┤
+│ A)  1 2 3 4 5                          (unused — red herring)     │
+│ B)  Compiler error                                                 │
+│ C)  2 3 4 5                                                        │
+│ D)  Exception thrown                                               │
+│ E)  [1, 2, 3, 4, 5]  (printed 5 times, once per loop pass)         │
+└──────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────┐
+│ MATCHES + WHY                                                      │
+├──────────────────────────────────────────────────────────────────┤
+│ 1 → C  "2 3 4 5"                                                   │
+│   Starts at i=1, not 0 — skips index 0 (value 1) entirely, then    │
+│   prints indices 1-4 (values 2, 3, 4, 5).                          │
+│                                                                    │
+│ 2 → E  "[1, 2, 3, 4, 5]" x5                                        │
+│   The bug: it appends `nums` (the WHOLE list), not `num` (the      │
+│   loop variable) — easy to miss since they're one letter apart.   │
+│   `nums + " "` still compiles fine, because + with a String        │
+│   operand calls toString() on the list. So each of the 5 passes    │
+│   appends the list's full toString(), five times in a row.        │
+│                                                                    │
+│ 3 → B  "Compiler error"                                            │
+│   `nums.length` is array syntax — nums is a List, which has        │
+│   .size(), not .length. This fails to compile entirely.            │
+│                                                                    │
+│ 4 → D  "Exception thrown"                                          │
+│   `i <= nums.size()` lets i reach 5 — but valid indices only go    │
+│   up to 4. nums.get(5) throws IndexOutOfBoundsException at         │
+│   runtime (this one DOES compile, it just blows up when run).      │
+│                                                                    │
+│ Unused: "1 2 3 4 5" — none of the four candidates actually         │
+│ produce this. It's there to stop you from matching by              │
+│ elimination instead of actually tracing each loop.                 │
+└──────────────────────────────────────────────────────────────────┘

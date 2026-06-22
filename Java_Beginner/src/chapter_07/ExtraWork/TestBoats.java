@@ -4,9 +4,6 @@
  */
 package chapter_07.ExtraWork;
 
-import chapter_07.Rowboat;
-import chapter_07.Sailboat;
-
 /**
  *
  * @author Admin

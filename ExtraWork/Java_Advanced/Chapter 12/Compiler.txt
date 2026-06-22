@@ -1,0 +1,73 @@
+╔══════════════════════════════════════════════════════════════════╗
+║         BE the Compiler — LAMBDAS (from page 395 / p.418)          ║
+╚══════════════════════════════════════════════════════════════════╝
+
+┌──────────────────────────────────────────────────────────────────┐
+│ [✓] Runnable r = () -> System.out.println("Hi!");                 │
+│     VALID. Runnable's method takes no parameters and returns      │
+│     void — this lambda matches exactly.                            │
+├──────────────────────────────────────────────────────────────────┤
+│ [✓] Consumer<String> c = s -> System.out.println(s);              │
+│     VALID. Consumer takes exactly one parameter and returns       │
+│     void — matches.                                                │
+├──────────────────────────────────────────────────────────────────┤
+│ [ ] Supplier<String> s = () -> System.out.println("Some string"); │
+│     INVALID. Should return a String but doesn't — println()       │
+│     returns void, and Supplier's method must return a value.      │
+├──────────────────────────────────────────────────────────────────┤
+│ [ ] Consumer<String> c = (s1, s2) -> System.out.println(s1 + s2); │
+│     INVALID. Should take only one parameter but has two.          │
+├──────────────────────────────────────────────────────────────────┤
+│ [ ] Runnable r = (String str) -> System.out.println(str);         │
+│     INVALID. Should not have parameters — Runnable's method       │
+│     takes zero.                                                    │
+├──────────────────────────────────────────────────────────────────┤
+│ [✓] Function<String, Integer> f = s -> s.length();                │
+│     VALID. Takes a String, returns an int (length() returns int,  │
+│     auto-boxed to Integer) — matches Function<String, Integer>.   │
+├──────────────────────────────────────────────────────────────────┤
+│ [✓] Supplier<String> s = () -> "Some string";                     │
+│     VALID. A single-expression lambda with no braces and no       │
+│     "return" keyword still counts as returning that expression's  │
+│     value — "Some string" IS the returned value here.             │
+├──────────────────────────────────────────────────────────────────┤
+│ [ ] Consumer<String> c = s -> "String" + s;                       │
+│     INVALID. Same implicit-return rule as above works against     │
+│     it this time: this single-expression lambda effectively       │
+│     returns a String ("String" + s). But Consumer's method must   │
+│     return void — it's not allowed to return anything, even       │
+│     "by accident" through an unreturned expression value.         │
+├──────────────────────────────────────────────────────────────────┤
+│ [ ] Function<String, Integer> f = (int i) -> "i = " + i;          │
+│     INVALID. Should have a String parameter and return an int,    │
+│     but instead it has an int parameter and returns a String —    │
+│     both ends of the signature are backwards.                      │
+├──────────────────────────────────────────────────────────────────┤
+│ [ ] Supplier<String> s = s -> "Some string: " + s;                 │
+│     INVALID. Should not have any parameters — Supplier's method   │
+│     takes zero, but this lambda has one (s).                       │
+├──────────────────────────────────────────────────────────────────┤
+│ [ ] Function<String, Integer> f = () -> System.out.println(       │
+│         "Some string");                                            │
+│     INVALID. Should take a String parameter. Should return an     │
+│     int, but actually returns nothing (println returns void).     │
+└──────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────┐
+│ THE BIG PATTERN ACROSS ALL OF THESE                                │
+├──────────────────────────────────────────────────────────────────┤
+│ Every lambda has to match its target interface's single abstract  │
+│ method on THREE things at once: parameter count, parameter        │
+│ type(s), and return type. Get any one of the three wrong and it   │
+│ fails — even if the other two are perfect.                        │
+│                                                                    │
+│ The sneakiest failure mode here isn't missing parameters or wrong │
+│ types — it's the IMPLICIT RETURN rule. A single-expression lambda │
+│ (no braces, no semicolon, no "return") always counts as returning │
+│ that expression's value automatically. That's a feature when the  │
+│ target is a Supplier or Function (saves you typing "return").     │
+│ It's a bug when the target is a Consumer or Runnable, since those │
+│ are required to return void — and an implicit return value still  │
+│ counts as "returning something," even with no return keyword in   │
+│ sight.                                                              │
+└──────────────────────────────────────────────────────────────────┘
