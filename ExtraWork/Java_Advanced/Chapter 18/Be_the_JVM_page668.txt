@@ -1,0 +1,34 @@
+╔══════════════════════════════════════════════════════════════════════════╗
+║                    BE THE JVM -- EXERCISE SOLUTION                        ║
+║                          (from page 668)                                  ║
+╚══════════════════════════════════════════════════════════════════════════╝
+
+┌──────────────────────────────────────────────────────────────────────────┐
+│ ANSWER                                                                    │
+└──────────────────────────────────────────────────────────────────────────┘
+
+  The answer is: the output won't be the same every time.
+
+  In theory, one might expect the size to always be 52 (2 x 26 letters in
+  the alphabet), but in fact this is one of those lost-update problems.
+
+┌──────────────────────────────────────────────────────────────────────────┐
+│ EXAMPLE OUTPUT                                                            │
+└──────────────────────────────────────────────────────────────────────────┘
+
+  File  Edit  Window  Help  ZeCount
+
+  % java TwoThreadsWriting
+  pool-1-thread-2[a, A, b, B, c, C, d, D, E, F, g, G, h, H, i, j, K, k,
+  pool-1-thread-1[a, A, b, B, c, C, d, D, E, F, g, G, h, H, i, j, K, k,
+  pool-1-thread-1 size = 40
+  pool-1-thread-2 size = 40
+
+  Note: your output probably won't look exactly the same as this, but if
+  you predicted that the size would be less than 52, you win a cookie.
+
+┌──────────────────────────────────────────────────────────────────────────┐
+│ TAKEAWAY                                                                  │
+└──────────────────────────────────────────────────────────────────────────┘
+
+  It can be solved in two different ways; both are valid.

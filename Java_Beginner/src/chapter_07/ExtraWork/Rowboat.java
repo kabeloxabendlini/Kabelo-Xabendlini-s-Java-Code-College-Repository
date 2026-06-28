@@ -16,4 +16,9 @@ public class Rowboat extends Boat {
     public void rowTheBoat() {
         System.out.print("stroke natasha");
     }
+
+    @Override
+    public void move() {
+        rowTheBoat();
+    }
 }

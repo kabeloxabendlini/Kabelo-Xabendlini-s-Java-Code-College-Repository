@@ -1,0 +1,39 @@
+Who Am I? (Page 631)
+
+  ---------------------------------          |  --------------------------------------
+               Clue                          |                  Answer
+  ------------------------------             |  ----------------------------------------
+  I need to be shut down or I                |              ExecutorService
+  might live forever                         |
+                                             |
+  I let you talk to a remote SocketChannel,  |                   Socket
+  machine                                    | 
+                                             |
+  I might be thrown by sleep()               |              InterruptedException
+  and await()                                |
+                                             |
+  If you want to reuse Threads,Thread pool,  |                ExecutorService
+  you should use me                          |
+                                             |
+  You need to know me if your IP Address,    |                     Port
+  Host name,want to connect to another       |
+  machine                                    |
+                                             |
+  I’m like a separate process                |                    Thread
+  running on the machine                     | 
+                                             |
+  I can give you the                         |                    Executors
+  ExecutorService you need                   |
+                                             |
+  You need one of me if you want             |                ServerSocketChannel
+  clients to connect to me                   | 
+                                             |
+  I can help you make your Thread.sleep(),   |                   CountDownLatch
+  multithreaded code more                    |
+  predictable                                |
+                                             |
+  I represent a job to run                   |                       Runnable
+                                             |
+  I store the IP address and                 |                  InetSocketAddress
+  port of the server                         |
+  -----------------------------------------------------------------------

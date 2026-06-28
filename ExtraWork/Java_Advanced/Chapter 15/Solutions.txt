@@ -1,0 +1,110 @@
+╔══════════════════════════════════════════════════════════════════════════╗
+║                  GUI LAYOUT MANAGER MATCHING EXERCISE                     ║
+║                        (from pages 534-535)                               ║
+╚══════════════════════════════════════════════════════════════════════════╝
+
+Match each numbered screenshot (1-6) to the lettered code snippet (A-E)
+that produces it.
+
+┌──────────────────────────────────────────────────────────────────────────┐
+│ PICTURE 1                                                                 │
+│ Description: Plain dark-gray panel filling the frame, no visible buttons │
+└──────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────┐
+│ PICTURE 2                                                                 │
+│ Description: Black bar across the top with "watari" button centered in  │
+│              it; dark-gray panel filling the rest of the frame below     │
+└──────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────┐
+│ PICTURE 3                                                                 │
+│ Description: Light gray/white area filling most of the frame; black bar │
+│              with "watari" button near the bottom                        │
+└──────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────┐
+│ PICTURE 4                                                                 │
+│ Description: "watari" button along the top strip, light "tesuji" panel  │
+│              area below it, with a solid black panel on the right side  │
+└──────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────┐
+│ PICTURE 6                                                                 │
+│ Description: "watari" button across the top, light dark-gray "tesuji"   │
+│              panel filling the center/left, solid black panel on right  │
+└──────────────────────────────────────────────────────────────────────────┘
+
+╔══════════════════════════════════════════════════════════════════════════╗
+║                           CODE SNIPPET C                                  ║
+╚══════════════════════════════════════════════════════════════════════════╝
+
+    JFrame frame = new JFrame();
+    JPanel panel = new JPanel();
+    panel.setBackground(Color.darkGray);
+    JButton button = new JButton("tesuji");
+    JButton buttonTwo = new JButton("watari");
+    panel.add(buttonTwo);
+    frame.getContentPane().add(BorderLayout.CENTER, button);
+
+╔══════════════════════════════════════════════════════════════════════════╗
+║                           CODE SNIPPET D                                  ║
+╚══════════════════════════════════════════════════════════════════════════╝
+
+    JFrame frame = new JFrame();
+    JPanel panel = new JPanel();
+    panel.setBackground(Color.darkGray);
+    JButton button = new JButton("tesuji");
+    JButton buttonTwo = new JButton("watari");
+    frame.getContentPane().add(BorderLayout.NORTH, panel);
+    panel.add(buttonTwo);
+    frame.getContentPane().add(BorderLayout.CENTER, button);
+
+╔══════════════════════════════════════════════════════════════════════════╗
+║                           CODE SNIPPET E                                  ║
+╚══════════════════════════════════════════════════════════════════════════╝
+
+    JFrame frame = new JFrame();
+    JPanel panel = new JPanel();
+    panel.setBackground(Color.darkGray);
+    JButton button = new JButton("tesuji");
+    JButton buttonTwo = new JButton("watari");
+    frame.getContentPane().add(BorderLayout.SOUTH, panel);
+    panel.add(buttonTwo);
+    frame.getContentPane().add(BorderLayout.NORTH, button);
+
+╔══════════════════════════════════════════════════════════════════════════╗
+║                           CODE SNIPPET A                                  ║
+╚══════════════════════════════════════════════════════════════════════════╝
+
+    JFrame frame = new JFrame();
+    JPanel panel = new JPanel();
+    panel.setBackground(Color.darkGray);
+    JButton button = new JButton("tesuji");
+    JButton buttonTwo = new JButton("watari");
+    panel.add(button);
+    frame.getContentPane().add(BorderLayout.NORTH, buttonTwo);
+    frame.getContentPane().add(BorderLayout.EAST, panel);
+
+╔══════════════════════════════════════════════════════════════════════════╗
+║                           CODE SNIPPET B                                  ║
+╚══════════════════════════════════════════════════════════════════════════╝
+
+    JFrame frame = new JFrame();
+    JPanel panel = new JPanel();
+    panel.setBackground(Color.darkGray);
+    JButton button = new JButton("tesuji");
+    JButton buttonTwo = new JButton("watari");
+    panel.add(buttonTwo);
+    frame.getContentPane().add(BorderLayout.CENTER, button);
+    frame.getContentPane().add(BorderLayout.EAST, panel);
+
+┌──────────────────────────────────────────────────────────────────────────┐
+│ ANSWER KEY (fill in once worked out)                                     │
+│                                                                          │
+│   Picture 1  ->  Snippet (C.)                                            │
+│   Picture 2  ->  Snippet (D.)                                            │
+│   Picture 3  ->  Snippet (E.)                                            │
+│   Picture 4  ->  Snippet (A.)                                            │
+│   Picture 6  ->  Snippet (B.)                                            │
+└──────────────────────────────────────────────────────────────────────────┘

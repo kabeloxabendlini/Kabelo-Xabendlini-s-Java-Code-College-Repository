@@ -10,6 +10,7 @@ import chapter_07.ExtraWork.Boat;
  *
  * @author Admin
  */
+
 public class Sailboat extends Boat {
 
     public void move() {

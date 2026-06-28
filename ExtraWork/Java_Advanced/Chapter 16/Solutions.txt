@@ -1,0 +1,19 @@
+Can they be saved? Exercise Solutions
+
+Object Type   |    Serializable?        |        If not, why not?
+
+Object        |         No              |        The root java.lang.Object class itself does not implement the Serializable interface.
+
+String        |         Yes             |        Strings contain simple text data that is highly meaningful to save and restore across sessions.
+
+File          |         Yes             |        A java.io.File object stores a file path string. It serializes the path string, not the raw contents of the physical file.
+
+Date          |         Yes             |        Dates represent a specific point in time expressed as a timestamp, which is universally saveable.
+
+OutputStream  |          No             |        Streams represent live connection pipelines bound directly to runtime operating system resources, open buffers, or network sockets.
+
+JFrame        |          Yes            |        Component state can be saved (though in production, custom state saving is preferred due to class version compatibility).
+
+Integer       |          Yes            |        Wrapper classes for primitive types are immutable data containers and safely implement Serializable.
+
+System        |           No            |        The System class represents the unique runtime configuration tied directly to the current execution instance of the JVM and OS environment.   

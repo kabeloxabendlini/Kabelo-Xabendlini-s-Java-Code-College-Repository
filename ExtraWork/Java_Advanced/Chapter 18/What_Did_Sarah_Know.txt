@@ -1,0 +1,27 @@
+╔══════════════════════════════════════════════════════════════════════════╗
+║                          WHAT DID SARAH KNOW?                             ║
+╚══════════════════════════════════════════════════════════════════════════╝
+
+┌──────────────────────────────────────────────────────────────────────────┐
+│ THE PROBLEM                                                               │
+└──────────────────────────────────────────────────────────────────────────┘
+
+  Sarah realized that in order to ensure the entire exit sequence would
+  run without interruption, the orbiterAirlockExitSequence() method
+  needed to be synchronized.
+
+  As the design stood, it would be possible for a returning spacewalker
+  to interrupt the Exit Sequence!
+
+  The Exit Sequence thread couldn't be interrupted in the middle of any
+  of the lower-level method calls, but it COULD be interrupted in
+  between those calls.
+
+┌──────────────────────────────────────────────────────────────────────────┐
+│ THE FIX                                                                   │
+└──────────────────────────────────────────────────────────────────────────┘
+
+  Sarah knew that the entire sequence should be run as one atomic unit.
+
+  If the orbiterAirlockExitSequence() method was synchronized, it could
+  not be interrupted at any point.
