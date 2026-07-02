@@ -1,0 +1,49 @@
+1. Answer 4 is correct: public static final double MIN_PRICE = 10.0;
+
+2. The correct answer is 5: double total = (item2.price*2 + item1.price)*(1+tax);
+
+3. The correct answer is public Clothing(String description, double price, String size){…}
+
+4. ArithmeticException
+
+5.          for(Clothing c: items){
+            if(c.size.equals(c1.size)){
+                //add to total
+            }
+        }
+    
+
+6. System.out.println("Welcome to Duke's Choice Shop!");
+
+7. Helidon
+
+8. compareTo
+
+9. ArrayIndexOutOfBoundsException
+
+10.     switch(measurement){
+        case 1: case 2: case 3:
+            c1.size = "S";
+            break;
+    }
+
+11. Customer c1 = new Customer("Pinky", 3);
+
+12. L
+
+13. Clothing[] items = {item1, item2};
+
+14. for(Clothing c: items){ total = total + c.price*(1+tax); }
+
+15. Customer c1 = new Customer(); c1.name = "Pinky";
+
+16. public class Customer{ String name; }
+
+17. public Clothing[] getItems(){ return items; }
+
+18. Object
+
+19. c1.setSize(3)
+
+20. public void setPrice(double price) 
+    { if(price < MIN_PRICE){ this.price = MIN_PRICE; } else{ this.price = price; } }
